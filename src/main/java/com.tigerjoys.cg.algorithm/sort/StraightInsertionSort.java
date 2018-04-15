@@ -17,7 +17,7 @@ public class StraightInsertionSort {
                     ArrayUtils.cryleCounter();
                     ArrayUtils.swap(j+1 , j);
                 }
-                ArrayUtils.SQLIST[j+1] = temp;
+                //ArrayUtils.SQLIST[j+1] = temp;
             }
         }
 
