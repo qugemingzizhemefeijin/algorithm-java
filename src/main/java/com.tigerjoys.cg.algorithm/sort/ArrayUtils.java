@@ -8,7 +8,7 @@ package com.tigerjoys.cg.algorithm.sort;
  */
 public class ArrayUtils {
 
-    public static final int[] SQLIST = {9,1,5,8,3,7,4,6,2};
+    public static final int[] SQLIST = {9,1,5,8,3,7,4,6};
 
     //交换计数
     private static int SAWP_COUNTER = 0;

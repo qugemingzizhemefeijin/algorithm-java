@@ -35,16 +35,16 @@ package com.tigerjoys.cg.algorithm.sort;
 public class MaxHeapSort {
 
     public static void main(String[] args) {
+        ArrayUtils.print();
         int i;
-        for(i=ArrayUtils.SQLIST.length/2;i>=0;i--) {
+        for(i=ArrayUtils.SQLIST.length/2-1;i>=0;i--) {
             ArrayUtils.cryleCounter();
-            heapAdjust(i,ArrayUtils.SQLIST.length);
+            heapAdjust(i,ArrayUtils.SQLIST.length-1);
         }
-
         for(i=ArrayUtils.SQLIST.length-1;i>=0;i--) {
             ArrayUtils.cryleCounter();
             ArrayUtils.swap(0 , i);
-            heapAdjust(0 , i);
+            heapAdjust(0 , i-1);
         }
 
         ArrayUtils.print();
@@ -56,9 +56,11 @@ public class MaxHeapSort {
      * @param m - 截止位置
      */
     private static void heapAdjust(int s , int m) {
+        System.out.println("s=="+s+"--"+ArrayUtils.SQLIST[s]+"--"+m);
         int temp = ArrayUtils.SQLIST[s];
-        for(int i=s*2;i<m-1;i*=2) {
+        for(int i=s*2+1;i<=m;i*=2) {//沿关键字较大的孩子结点向下筛选
             ArrayUtils.cryleCounter();
+            //System.out.println("i=="+i+"--"+ArrayUtils.SQLIST[i]+",,--" + ArrayUtils.SQLIST[i+1]+"--"+temp);
             if(i<m && ArrayUtils.SQLIST[i] < ArrayUtils.SQLIST[i+1]) {
                 i++;
             }
@@ -71,6 +73,8 @@ public class MaxHeapSort {
         }
 
         ArrayUtils.SQLIST[s] = temp;
+
+        ArrayUtils.print();
     }
 
 }
