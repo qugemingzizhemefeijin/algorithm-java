@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.tigerjoys.cg.algorithm</groupId>
+  <artifactId>com.tigerjoys.cg.algorithm</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>com.cg.zz.test</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <guava_version>24.1.1-jre</guava_version>
+	<commons_codec_version>1.12</commons_codec_version>
+	
+	
+	<java_source_version>1.8</java_source_version>
+	<java_target_version>1.8</java_target_version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+		<groupId>com.google.guava</groupId>
+		<artifactId>guava</artifactId>
+		<version>${guava_version}</version>
+	</dependency>
+	<dependency>
+  		<groupId>commons-codec</groupId>
+  		<artifactId>commons-codec</artifactId>
+  		<version>${commons_codec_version}</version><!--$NO-MVN-MAN-VER$-->
+	</dependency>
+  </dependencies>
+  
+  <build>
+  	<plugins>
+		<!-- 指定jdk版本 -->
+        <plugin>
+        	<groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+            	<source>${java_source_version}</source>
+                <target>${java_source_version}</target>
+                <encoding>${project.build.sourceEncoding}</encoding>
+                <fork>true</fork>
+                <meminitial>128m</meminitial>
+				<maxmem>512m</maxmem>
+            </configuration>
+        </plugin>
+  	</plugins>
+  </build>
+</project>

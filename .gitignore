@@ -6,16 +6,14 @@ target/
 *.tar
 *.tar.gz
 
-# gradle ignore
-.gradle/
-gradle/
-out/
-
 # eclipse ignore
 .settings/
 .project
 .classpath
-build/
+.externalToolBuilders
+bin/
+.factorypath
+.springBeans
 
 # idea ignore
 .idea/
@@ -34,3 +32,5 @@ build/
 .DS_Store
 Thumbs.db
 
+#ios
+.apt_generated/
