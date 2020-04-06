@@ -14,7 +14,55 @@ public class _0179LargestNumber {
 	public static void main(String[] args) {
 		int[] i = new int[] {10,80,2,9};
 		System.err.println(largestNumber(i));
+		System.err.println(myAtoi(" -0k4"));
 	}
+	
+	public static int myAtoi(String str) {
+        if(str == null || str.length() == 0) {
+            return 0;
+        }
+        str = str.trim();
+
+        boolean b = false;
+        StringBuilder buf = new StringBuilder();
+        for(int i=0;i<str.length();i++){
+            char c = str.charAt(i);
+            if(i==0 && c == '-'){
+                buf.append(c);
+                b = true;
+            } else if(c >= 48 && c <= 57) {
+                buf.append(c);
+            } else if(c == '+' && !b){
+                continue;
+            } else {
+                break;
+            }
+        }
+
+        String s = buf.toString();
+        s = s.replaceAll("^0*", "");
+        s = s.replaceAll("^[-]0*", "-");
+       
+        if(s.length() == 0 || (b && s.length() == 1)){
+            return 0;
+        }
+        String v = null;
+        if(b){
+            v = String.valueOf(Integer.MIN_VALUE);
+        } else {
+            v = String.valueOf(Integer.MAX_VALUE);
+        }
+
+        if(s.length() < v.length() || (s.length() == v.length() && s.compareTo(v) <= 0)){
+            return Integer.parseInt(s);
+        } else {
+            if(b){
+                return Integer.MIN_VALUE;
+            } else {
+                return Integer.MAX_VALUE;
+            }
+        }
+    }
 	
 	public static String largestNumber(int[] nums) {
 		if(nums == null || nums.length == 0) {
