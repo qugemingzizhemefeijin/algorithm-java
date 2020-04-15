@@ -30,6 +30,17 @@ public class ArrayUtils {
     }
 
     /**
+     * 交换数组指定位置的元素
+     * @param i - 位置1
+     * @param j - 位置2
+     */
+    public static final void swap(int[] array, int i , int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    /**
      * 循环计数
      */
     public static final void cryleCounter(){
@@ -49,6 +60,65 @@ public class ArrayUtils {
         System.out.println();
         System.out.println("总交换次数：" + SAWP_COUNTER);
         System.out.println("总循环次数：" + CRILY_COUNTER);
+    }
+    
+    public static class Node {
+    	public Object data;
+    	public Node next;
+    	public Node() {
+    		
+    	}
+    	public Node(Object data) {
+    		this.data = data;
+    	}
+    	public Node(Object data, Node next) {
+    		this.data = data;
+    		this.next = next;
+    	}
+    }
+    
+    /**
+     * 初始化指定数量的节点
+     * @param num - 数量
+     * @return Node 头
+     */
+    public static final Node initNode(int num) {
+    	Node head = null, last = null;
+    	for(int i=0;i<num;i++) {
+    		Node node = new Node(i, last);
+    		if(i == 0) {
+    			head = node;
+    		}
+    		last = node;
+    	}
+    	return head;
+    }
+    
+    /**
+     * 初始化有环的链表
+     * @param num - 数量
+     * @param lastPoint - 指定最后一个节点指向第几个节点
+     * @return Node 头
+     */
+    public static final Node initLinkNode(int num, int lastPoint) {
+    	Node head = null, last = null, point = null;
+    	for(int i=0;i<num;i++) {
+    		Node node = new Node(i);
+    		if(i == 0) {
+    			head = node;
+    		}
+    		if(i == lastPoint - 1) {
+    			point = node;
+    		}
+    		if(i == num - 1) {
+    			node.next = point;
+    		}
+    		if(last != null) {
+    			last.next = node;
+    		}
+    		last = node;
+    	}
+    	return head;
     }
 
     private ArrayUtils(){
