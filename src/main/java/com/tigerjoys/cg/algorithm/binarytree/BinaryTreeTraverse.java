@@ -3,20 +3,12 @@ package com.tigerjoys.cg.algorithm.binarytree;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+import com.tigerjoys.cg.algorithm.binarytree.BinaryTreeUtils.TreeNode;
+
 /**
  * 二叉树遍历
  */
 public class BinaryTreeTraverse {
-	
-	private static class TreeNode {
-		int data;
-		TreeNode leftChild;
-		TreeNode rightChild;
-		
-		TreeNode(int data) {
-			this.data = data;
-		}
-	}
 	
 	/**
 	 * 构建二叉树
