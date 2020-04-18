@@ -125,9 +125,9 @@ public class 平衡二叉树 {
 			pRightSon.parent = pParent;
 			if(pParent != null) {
 				if(p == pParent.right) {
-					pParent.left = pRightSon;
-				} else if(p == pParent.left) {
 					pParent.right = pRightSon;
+				} else if(p == pParent.left) {
+					pParent.left = pRightSon;
 				}
 			}
 			//右子的左孩子改成p
@@ -217,13 +217,13 @@ public class 平衡二叉树 {
 	}
 	
 	public static void main(String[] args) {
-		int[] array = {3, 2 , 1, 4};
+		int[] array = {3, 2 , 1, 4, 5};
 		AVLNode root = new AVLNode(array[0]);
 		for(int i=1;i<array.length;i++) {
 			insert(root, array[i]);
+			printLeftRightTree(root);
 			System.out.println("===================================");
 		}
-		printLeftRightTree(root);
 	}
 
 }
