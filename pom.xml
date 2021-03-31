@@ -13,7 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     
-    <guava_version>24.1.1-jre</guava_version>
+    <guava_version>29.0-jre</guava_version>
 	<commons_codec_version>1.12</commons_codec_version>
 	
 	
