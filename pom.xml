@@ -15,7 +15,7 @@
     
     <guava_version>24.1.1-jre</guava_version>
 	<commons_codec_version>1.12</commons_codec_version>
-	
+	<jol_version>0.9</jol_version>
 	
 	<java_source_version>1.8</java_source_version>
 	<java_target_version>1.8</java_target_version>
@@ -31,6 +31,11 @@
   		<groupId>commons-codec</groupId>
   		<artifactId>commons-codec</artifactId>
   		<version>${commons_codec_version}</version><!--$NO-MVN-MAN-VER$-->
+	</dependency>
+	<dependency>
+		<groupId>org.openjdk.jol</groupId>
+		<artifactId>jol-core</artifactId>
+		<version>${jol_version}</version>
 	</dependency>
   </dependencies>
   

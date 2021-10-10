@@ -8,13 +8,52 @@ package com.tigerjoys.cg.algorithm.sort;
  */
 public class ArrayUtils {
 
-    public static final int[] SQLIST = {9,1,5,8,3,7,4,6};
+    public static final int[] SQLIST = { 23, 0, 12, 56, 34 , 85 , 47, 37, 9 ,6, 2 };
 
     //交换计数
     private static int SAWP_COUNTER = 0;
 
     //循环计数
     private static int CRILY_COUNTER = 0;
+    
+    /**
+     * 设置指定索引的值
+     */
+    public static final void set(int i, int val) {
+    	SQLIST[i] = val;
+    }
+    
+    /**
+     * 获取指定索引的值
+     * @return int
+     */
+    public static final int get(int i) {
+    	return SQLIST[i];
+    }
+    
+    /**
+     * 判断i索引值是否大于j索引值
+     * @return boolean
+     */
+    public static final boolean gt(int i, int j) {
+    	return SQLIST[i] > SQLIST[j];
+    }
+    
+    /**
+     * 判断i索引值是否小于j索引值
+     * @return boolean
+     */
+    public static final boolean lt(int i, int j) {
+    	return SQLIST[i] < SQLIST[j];
+    }
+    
+    /**
+     * 返回数组的长度
+     * @return int
+     */
+    public static final int length() {
+    	return SQLIST.length;
+    }
 
     /**
      * 交换数组指定位置的元素
@@ -45,6 +84,13 @@ public class ArrayUtils {
      */
     public static final void cryleCounter(){
         CRILY_COUNTER++;
+    }
+    
+    /**
+     * 交换次数+1
+     */
+    public static final void swapCounter() {
+    	SAWP_COUNTER++;
     }
 
     /**
