@@ -29,12 +29,11 @@ public class QuickSort {
 		for(int i=startIndex+1;i<=endIndex;i++) {
 			if(ArrayUtils.SQLIST[i] < pivot) {
 				mark++;
-				ArrayUtils.cryleCounter();
 				ArrayUtils.swap(i, mark);
 			}
+			ArrayUtils.cryleCounter();
 		}
 		
-		ArrayUtils.cryleCounter();
 		ArrayUtils.swap(startIndex, mark);
 		return mark;
 	}
