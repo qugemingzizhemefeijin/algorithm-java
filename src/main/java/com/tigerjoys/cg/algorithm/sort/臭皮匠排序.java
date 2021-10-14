@@ -1,7 +1,7 @@
 package com.tigerjoys.cg.algorithm.sort;
 
 // 通过递归，来交换前后的值
-public class 完美排序 {
+public class 臭皮匠排序 {
 
     public static void main(String[] args) {
         stooge_sort(0, ArrayUtils.length() - 1);

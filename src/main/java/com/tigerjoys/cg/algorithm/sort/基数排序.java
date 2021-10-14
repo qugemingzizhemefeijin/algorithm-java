@@ -1,7 +1,7 @@
 package com.tigerjoys.cg.algorithm.sort;
 
 // 基排序原理就是通过个位数的排序，然后再十位数的排序，即可达到整体排序的效果
-public class 基排序 {
+public class 基数排序 {
 
     static class Node {
         int v;
