@@ -5,7 +5,7 @@ package com.tigerjoys.cg.algorithm.leetcode;
  *
  * 1、1、2、3、5、8、13、21、34
  */
-public class _509FibonacciNumber {
+public class _0509FibonacciNumber {
 	
 	public static void main(String[] args) {
 		System.err.println(fib(6));

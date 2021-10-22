@@ -1,6 +1,7 @@
 package com.tigerjoys.cg.algorithm.leetcode;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * 
@@ -83,9 +84,7 @@ public class _0179LargestNumber {
 			return s2s1.compareTo(s1s2);
 		});*/
 		
-		Arrays.sort(ss, (s1,s2)->{
-			return s2.compareTo(s1);
-		});
+		Arrays.sort(ss, Comparator.reverseOrder());
 		
 		StringBuilder buf = new StringBuilder();
 		for(int i=0;i<ss.length;i++) {
