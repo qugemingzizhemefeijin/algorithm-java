@@ -1,6 +1,7 @@
 package com.tigerjoys.cg.algorithm.linked;
 
 import com.tigerjoys.cg.algorithm.linked.LinkedUtils.LinkNode;
+import com.tigerjoys.cg.algorithm.utils.SingleNode;
 
 /**
  * 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
@@ -32,6 +33,19 @@ public class 反转链表 {
 			current = next;
 		}
 		return pre;
+	}
+
+	private static SingleNode<Integer> reverseList1(SingleNode<Integer> head) {
+		return reverseList(head, null);
+	}
+
+	private static SingleNode<Integer> reverseList(SingleNode<Integer> node, SingleNode<Integer> pre) {
+		if(node == null) {
+			return pre;
+		}
+		SingleNode<Integer> next = node.next;
+		node.next = pre;
+		return reverseList(next, node);
 	}
 
 	public static void main(String[] args) {
