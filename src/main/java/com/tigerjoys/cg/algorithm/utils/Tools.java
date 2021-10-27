@@ -1,8 +1,14 @@
 package com.tigerjoys.cg.algorithm.utils;
 
+import com.alibaba.fastjson.JSON;
+
 import java.util.Stack;
 
 public final class Tools {
+
+    public static void printJson(Object o) {
+        System.out.println(JSON.toJSON(o));
+    }
 
     public static void printNode(SingleNode<Integer> node) {
         StringBuilder buf = new StringBuilder();

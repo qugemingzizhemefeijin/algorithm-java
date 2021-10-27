@@ -16,7 +16,8 @@
     <guava_version>31.0.1-jre</guava_version>
 	<commons_codec_version>1.12</commons_codec_version>
 	<jol_version>0.9</jol_version>
-      <lombok.version>1.18.16</lombok.version>
+    <lombok.version>1.18.16</lombok.version>
+    <fastjson.version>1.2.78</fastjson.version>
 	
 	<java_source_version>1.8</java_source_version>
 	<java_target_version>1.8</java_target_version>
@@ -38,6 +39,11 @@
 		<artifactId>jol-core</artifactId>
 		<version>${jol_version}</version>
 	</dependency>
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>fastjson</artifactId>
+          <version>${fastjson.version}</version>
+      </dependency>
     <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
