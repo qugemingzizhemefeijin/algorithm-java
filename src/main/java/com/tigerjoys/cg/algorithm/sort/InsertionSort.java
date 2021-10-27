@@ -17,9 +17,9 @@ public class InsertionSort {
 				insertIndex--;
 			}
 			//如果insertIndex变动过，则交换
-			if(insertIndex+1 != i) {
-				ArrayUtils.SQLIST[insertIndex + 1] = v;
-			}
+			//if(insertIndex+1 != i) {
+			//	ArrayUtils.SQLIST[insertIndex + 1] = v;
+			//}
 		}
 		ArrayUtils.print();
 	}
