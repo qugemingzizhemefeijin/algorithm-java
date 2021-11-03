@@ -70,13 +70,14 @@ public class _0006Z字形变换 {
         int curRow = 0;
         for (char c : s.toCharArray()) {
             rows.get(curRow).append(c);
+            // 这个判断其实是关键，就是当遇到第一行或者到最后一行，则指定上行还是下行，这样就能实现方向翻转
             if (curRow == 0 || curRow == numRows - 1) {
                 goingDown = !goingDown;
             }
             curRow += goingDown ? 1 : -1;
         }
 
-        StringBuffer ret = new StringBuffer();
+        StringBuilder ret = new StringBuilder();
         for(StringBuffer buf : rows) {
             ret.append(buf.toString());
         }
