@@ -2,8 +2,12 @@ package com.tigerjoys.cg.algorithm;
 
 public class Test {
 
-    public static void main(String[] args) {
-        System.out.println(reverse(102));
+    public static void main(String[] args) throws InterruptedException {
+        String s1 = new String(new char[]{'d', 'e'}, 0, 2);
+        s1.intern();
+        System.out.println(s1 == "de");
+
+        //System.out.println(reverse(102));
     }
 
     private static int reverse(int x) {

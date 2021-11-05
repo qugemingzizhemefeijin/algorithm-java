@@ -24,6 +24,10 @@ public final class Tools {
     }
 
     public static void printNode(SingleNode<Integer> node) {
+        if(node == null) {
+            System.out.println("[]");
+            return;
+        }
         StringBuilder buf = new StringBuilder();
         buf.append(node.val);
         node = node.next;
@@ -84,6 +88,15 @@ public final class Tools {
             }
             return root;
         }
+    }
+
+    /**
+     * 创建一个哑节点
+     * @param head 哑节点的next节点
+     * @return SingleNode<Integer>
+     */
+    public static SingleNode<Integer> createDummyNode(SingleNode<Integer> head) {
+        return new SingleNode<>(0, head);
     }
 
     private Tools() {}
