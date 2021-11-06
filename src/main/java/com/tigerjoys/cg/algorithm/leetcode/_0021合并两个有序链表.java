@@ -25,7 +25,7 @@ public class _0021合并两个有序链表 {
 		LinkNode link1 = LinkedUtils.createLink(new int[] {1,2,4});
 		LinkNode link2 = LinkedUtils.createLink(new int[] {1,3,4});
 
-		LinkNode head = mergeTwoLists2(link1, link2);
+		LinkNode head = mergeTwoLists3(link1, link2);
 		LinkedUtils.printOrderLink(head);
 	}
 
@@ -42,7 +42,26 @@ public class _0021合并两个有序链表 {
 	public static LinkNode mergeTwoLists3(LinkNode l1, LinkNode l2) {
 		LinkNode prehead = new LinkNode(-1);
 
-		return null;
+		LinkNode prev = prehead;
+		while(l1 != null && l2 != null) {
+			if(l1.data <= l2.data) {
+				prev.next = l1;
+				l1 = l1.next;
+			} else {
+				prev.next = l2;
+				l2 = l2.next;
+			}
+			prev = prev.next;
+		}
+
+		// 这里要注意，有可能l1,l2还会多余一个节点
+		if(l1 != null) {
+			prev.next = l1;
+		} else if(l2 != null) {
+			prev.next = l2;
+		}
+
+		return prehead.next;
 	}
 
 	// 方法一：递归
