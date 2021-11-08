@@ -1,6 +1,5 @@
 package com.tigerjoys.cg.algorithm.binarytree;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 
 public class BinaryTreeUtils {
@@ -56,6 +55,13 @@ public class BinaryTreeUtils {
 	 * @return TreeNode
 	 */
 	public static TreeNode createBinaryTree(Integer[] array) {
+		if(array == null || array.length == 0) {
+			return null;
+		}
+		if(array.length == 1) {
+			return new TreeNode(array[0]);
+		}
+
 		TreeNode root = new TreeNode(array[0]);
 		createNode(array, 0, root);
 		
@@ -63,19 +69,23 @@ public class BinaryTreeUtils {
 	}
 	
 	private static void createNode(Integer[] array, int i, TreeNode parentNode) {
-		if(i * 2 + 1 >= array.length || array[i * 2 + 1] == null) {
+		if(i * 2 + 1 >= array.length) {
 			return;
 		}
 
-		parentNode.leftChild = new TreeNode(array[i * 2 + 1]);
-		createNode(array, i * 2 + 1, parentNode.leftChild);
-		
-		if(i * 2 + 2 >= array.length || array[i * 2 + 2] == null) {
+		if(array[i * 2 + 1] != null) {
+			parentNode.leftChild = new TreeNode(array[i * 2 + 1]);
+			createNode(array, i + 1, parentNode.leftChild);
+		}
+
+		if(i * 2 + 2 >= array.length) {
 			return;
 		}
-		
-		parentNode.rightChild = new TreeNode(array[i * 2 + 2]);
-		createNode(array, i * 2 + 2, parentNode.rightChild);
+
+		if(array[i * 2 + 2] != null) {
+			parentNode.rightChild = new TreeNode(array[i * 2 + 2]);
+			createNode(array, i + 1, parentNode.rightChild);
+		}
 	}
 	
 	/**
