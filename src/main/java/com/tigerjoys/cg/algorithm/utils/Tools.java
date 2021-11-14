@@ -99,6 +99,106 @@ public final class Tools {
         return new SingleNode<>(0, head);
     }
 
+    /**
+     * 根据数组顺序创建链表
+     * @param array - int[]
+     * @return LinkNode
+     */
+    public static LinkNode createLink(int[] array) {
+        LinkNode temp = new LinkNode(array[0]);
+        LinkNode root = temp;
+        for(int i=1;i<array.length;i++) {
+            LinkNode node = new LinkNode(array[i]);
+            temp.next = node;
+            node.pre = temp;
+            temp = node;
+        }
+
+        return root;
+    }
+
+    /**
+     * 打印链表数据
+     * @param root - LinkNode
+     */
+    public static void printOrderLink(LinkNode root) {
+        if(root == null) {
+            System.out.println("[]");
+            return;
+        }
+        LinkNode temp = root;
+        while(temp != null) {
+            System.out.print(temp.data+",");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    /**
+     * 根据数组顺序创建链表
+     * @param array - int[]
+     * @return ListNode
+     */
+    public static ListNode createListLink(int[] array) {
+        ListNode temp = new ListNode(array[0]);
+        ListNode root = temp;
+        for(int i=1;i<array.length;i++) {
+            ListNode node = new ListNode(array[i]);
+            temp.next = node;
+            temp = node;
+        }
+
+        return root;
+    }
+
+
+
+    /**
+     * 根据数组顺序创建链表
+     * @param array      int[]
+     * @param cycleIndex 循环指向的索引值，-1则不是环形
+     * @return ListNode
+     */
+    public static ListNode createCycleListLink(int[] array, int cycleIndex) {
+        ListNode temp = new ListNode(array[0]);
+        ListNode root = temp;
+        ListNode cycleNode = null;
+        for(int i=1;i<array.length;i++) {
+            ListNode node = new ListNode(array[i]);
+            temp.next = node;
+            temp = node;
+
+            if(i == cycleIndex) {
+                cycleNode = node;
+            }
+        }
+
+        if(cycleIndex == 0) {
+            temp.next = root;
+        } else if(cycleIndex > 0) {
+            temp.next = cycleNode;
+        }
+
+        return root;
+    }
+
+    /**
+     * 打印链表数据
+     * @param root - ListNode
+     */
+    public static void printListLink(ListNode root) {
+        if(root == null) {
+            System.out.println("[]");
+            return;
+        }
+        ListNode temp = root;
+        while(temp != null) {
+            System.out.print(temp.val+",");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
     private Tools() {}
 
 }
