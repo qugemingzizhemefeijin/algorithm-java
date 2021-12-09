@@ -37,7 +37,7 @@ public class _0141环形链表 {
         return false;
     }
 
-    // 两个指针，一个步行1，一个不行2，只要是环形的，两个必能碰到一起。
+    // 两个指针，一个步行1，一个步行2，只要是环形的，两个必能碰到一起。
     public static boolean hasCycle1(ListNode head) {
         if(head == null || head.next == null) {
             return false;

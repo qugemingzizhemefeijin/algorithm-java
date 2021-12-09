@@ -1,8 +1,10 @@
 package com.tigerjoys.cg.algorithm.utils;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
 public class ListNode {
 
     public int val;
