@@ -118,23 +118,6 @@ public final class Tools {
     }
 
     /**
-     * 打印链表数据
-     * @param root - LinkNode
-     */
-    public static void printOrderLink(LinkNode root) {
-        if(root == null) {
-            System.out.println("[]");
-            return;
-        }
-        LinkNode temp = root;
-        while(temp != null) {
-            System.out.print(temp.data+",");
-            temp = temp.next;
-        }
-        System.out.println();
-    }
-
-    /**
      * 根据数组顺序创建链表
      * @param array - int[]
      * @return ListNode
