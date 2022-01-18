@@ -30,7 +30,7 @@ import java.util.Set;
  * 这两个链表不相交，因此返回 null 。
  *
  */
-public class _160相交链表 {
+public class _0160相交链表 {
 
     public static void main(String[] args) {
         ListNode headA = Tools.createListLink(new int[]{4, 1, 8, 4, 5});
