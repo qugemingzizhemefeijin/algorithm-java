@@ -17,7 +17,7 @@
 	<commons_codec_version>1.12</commons_codec_version>
 	<jol_version>0.9</jol_version>
     <lombok.version>1.18.16</lombok.version>
-    <fastjson.version>1.2.78</fastjson.version>
+    <fastjson.version>1.2.83</fastjson.version>
 	
 	<java_source_version>1.8</java_source_version>
 	<java_target_version>1.8</java_target_version>
