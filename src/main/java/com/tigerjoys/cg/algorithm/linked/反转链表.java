@@ -48,11 +48,23 @@ public class 反转链表 {
 		return reverseList(next, node);
 	}
 
+	private static LinkNode reverseList2(LinkNode head) {
+		if (head.next == null) return head;
+		LinkNode last = reverseList2(head.next);
+		head.next.next = head;
+		head.next = null;
+		return last;
+	}
+
 	public static void main(String[] args) {
 		int[] array = { 1, 2, 3, 4, 5, 6, 7, 8 };
+		//LinkNode root = LinkedUtils.createLink(array);
+		//LinkedUtils.printOrderLink(root);
+		//root = reverseList(root);
+		//LinkedUtils.printOrderLink(root);
+
 		LinkNode root = LinkedUtils.createLink(array);
-		LinkedUtils.printOrderLink(root);
-		root = reverseList(root);
+		root = reverseList2(root);
 		LinkedUtils.printOrderLink(root);
 	}
 
